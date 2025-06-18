@@ -10,6 +10,7 @@ import { ThemeProvider } from "@emotion/react";
 import theme from "./theme/index.js";
 import Product from "./pages/product/Product.jsx";
 import Checkout from "./pages/checkout/Checkout.jsx";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.jsx";
 
 const routes = createBrowserRouter([
     {
@@ -32,7 +33,10 @@ const routes = createBrowserRouter([
             {
                 path: '/cart',
                 element:
-                    <Cart />
+                    <ProtectedRoute>
+
+                        <Cart />
+                    </ProtectedRoute>
             },
             {
                 path: '/checkout',
